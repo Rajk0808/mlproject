@@ -3,8 +3,10 @@
 =======
 ## End to End Data Sciene Project
 
-MLFLOW_TRACKING_URI=https://dagshub.com/krishnaik06/mlprojecthindi.mlflow \
-MLFLOW_TRACKING_USERNAME=krishnaik06 \
-MLFLOW_TRACKING_PASSWORD=7104284f1bb44ece21e0e2adb4e36a250ae3251f \
-python script.py
->>>>>>> c3a4ca1 (Initial commit)
+import dagshub
+dagshub.init(repo_owner='Rajk0808', repo_name='mlproject', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
